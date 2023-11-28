@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  app:
+    image: python:3.9.18
+    tty: true
+    volumes:
+      - ./src:/mnt
+  db:
+    image: postgres:11-bullseye
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-python_database}
