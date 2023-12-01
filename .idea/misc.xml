@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Python 3.11" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.10.13 Docker Compose (app at [C:\Users\dev\PycharmProjects\python-sqlalchemy-example\docker-compose.yaml])" project-jdk-type="Python SDK" />
 </project>

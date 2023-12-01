@@ -35,4 +35,6 @@ from sqlalchemy import create_engine
 # default
 engine = create_engine("postgresql://postgres:postgres@db:5432/python_database", echo=True)
 
+
 Base.metadata.create_all(engine)
+

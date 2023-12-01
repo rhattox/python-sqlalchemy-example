@@ -1,14 +1,22 @@
 version: '3.9'
 services:
   app:
-    image: python:3.9.18
+    image: sqlalchemy-example
+    build:
+      context: .
     tty: true
     volumes:
       - ./src:/mnt
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   db:
     image: postgres:11-bullseye
     restart: always
+    ports:
+      - 5432:5432
     environment:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
       POSTGRES_DB: ${POSTGRES_DB:-python_database}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
