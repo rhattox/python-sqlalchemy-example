@@ -33,8 +33,9 @@ class TestUserCreation(unittest.TestCase):
         self.assertIsNotNone(queried_user)
         self.assertEqual(queried_user.name, 'John Doe')
         self.assertEqual(queried_user.password, 'securepassword')
-
-    # Add more test methods as needed
+        user_to_delete = session.query(User).filter_by(id=queried_user.id).first()
+        session.delete(user_to_delete)
+        session.commit()
         session.close()
 
 if __name__ == '__main__':
