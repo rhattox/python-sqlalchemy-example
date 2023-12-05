@@ -7,8 +7,6 @@ services:
     tty: true
     volumes:
       - ./src:/home/python
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
   db:
     image: postgres:11-bullseye
     restart: always
@@ -18,5 +16,4 @@ services:
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
       POSTGRES_DB: ${POSTGRES_DB:-python_database}
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+
