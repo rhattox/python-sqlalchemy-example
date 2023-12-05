@@ -1,10 +1,7 @@
 import unittest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-import os
-import sys
 from src.models.User import User
-from sqlalchemy.orm import Session
 
 class TestUserCreation(unittest.TestCase):
     def test_create_user(self):
